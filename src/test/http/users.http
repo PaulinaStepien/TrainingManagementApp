@@ -1,0 +1,45 @@
+### Get userById
+GET http://localhost:8080/users/1
+
+### Get AllUsers
+GET http://localhost:8080/users/allUsers
+
+### Get userByPhoneNumber
+GET http://localhost:8080/users/byPhone/123456789
+
+### Get userByEmail
+GET http://localhost:8080/users/byEmail/user2@example.com
+
+### Create user
+POST http://localhost:8080/users
+Content-Type: application/json
+
+{
+  "email": "john@example.com",
+  "password": "password123",
+  "firstName": "John",
+  "lastName": "Doe",
+  "birthdate": "1990-01-01",
+  "phoneNumber": "123456789"
+}
+
+### Update user
+PUT http://localhost:8080/users/2
+Content-Type: application/json
+
+{
+"email": "updatedemail@example.com",
+"password": "updatedpassword456",
+"birthdate": "1992-05-10",
+"phoneNumber": "987654321"
+}
+
+### Delete user
+DELETE http://localhost:8080/users/3
+
+
+
+
+
+
+

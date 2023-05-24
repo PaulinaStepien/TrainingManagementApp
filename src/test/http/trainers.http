@@ -1,0 +1,37 @@
+### Get trainerById
+GET http://localhost:8080/trainers/1
+
+### Get AllTrainers
+GET http://localhost:8080/trainers/allTrainers
+
+### Get trainerByEmail
+GET http://localhost:8080/trainers/byEmail/user1@example.com
+
+### Create trainer
+POST http://localhost:8080/trainers
+Content-Type: application/json
+
+{
+  "email": "nowak@mail.mail",
+  "firstName": "Adam",
+  "lastName": "Nowak"
+}
+
+### Update trainer
+PUT http://localhost:8080/trainers/2
+Content-Type: application/json
+
+{
+  "firstName": "Ludwik",
+  "lastName": "Nowy"
+}
+
+### Delete trainer
+DELETE http://localhost:8080/trainers/2
+
+
+
+
+
+
+

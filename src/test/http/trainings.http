@@ -1,0 +1,31 @@
+### Get trainingById
+GET http://localhost:8080/trainings/byId/1
+
+### Create training
+POST http://localhost:8080/trainings
+Content-Type: application/json
+
+{
+  "startDateTime": "2023-05-27T19:00:00",
+  "endDateTime": "2023-05-27T20:00:00",
+  "status": "ACTIVE",
+  "trainerId": 1
+}
+
+### Update training
+PUT http://localhost:8080/trainings/1
+Content-Type: application/json
+
+{
+  "userId": 1
+}
+
+### Delete training
+DELETE http://localhost:8080/trainings/1
+
+
+
+
+
+
+

@@ -1,0 +1,23 @@
+### Get subscriptionById
+GET http://localhost:8080/subscriptions/1
+
+
+### Create subscription
+POST http://localhost:8080/subscriptions
+Content-Type: application/json
+
+{
+  "beginDate": "2023-05-22",
+  "endDate": "2023-06-22",
+  "status": "ACTIVE",
+  "subscriptionType": "SIX",
+  "userId": 1
+}
+
+
+
+
+
+
+
+
