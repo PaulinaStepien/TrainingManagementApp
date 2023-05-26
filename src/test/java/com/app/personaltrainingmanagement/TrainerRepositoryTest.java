@@ -2,20 +2,15 @@ package com.app.personaltrainingmanagement;
 
 import com.app.personaltrainingmanagement.Trainer.Trainer;
 import com.app.personaltrainingmanagement.Trainer.TrainerRepository;
-import com.app.personaltrainingmanagement.User.User;
-import com.app.personaltrainingmanagement.User.UserRepository;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.jdbc.Sql;
 
-import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
+import static org.junit.Assert.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
@@ -36,6 +31,7 @@ public class TrainerRepositoryTest {
         if (foundTrainer.isPresent()) {
             Trainer trainer = foundTrainer.get();
             System.out.println("Trainer found: " + trainer.getFirstName() + " " + trainer.getLastName());
+            assertNotNull(trainer);
         } else {
             System.out.println("User not found.");
         }

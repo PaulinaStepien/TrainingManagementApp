@@ -12,6 +12,7 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
+import static org.junit.Assert.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @DataJpaTest
@@ -31,6 +32,7 @@ public class UserRepositoryTest {
         if (foundUser.isPresent()) {
             User user = foundUser.get();
             System.out.println("User found: " + user.getFirstName() + " " + user.getLastName());
+            assertNotNull(user);
         } else {
             System.out.println("User not found.");
         }
@@ -45,6 +47,7 @@ public class UserRepositoryTest {
         if (foundUser.isPresent()) {
             User user = foundUser.get();
             System.out.println("User found: " + user.getFirstName() + " " + user.getLastName());
+            assertNotNull(user);
         } else {
             System.out.println("User not found.");
         }
