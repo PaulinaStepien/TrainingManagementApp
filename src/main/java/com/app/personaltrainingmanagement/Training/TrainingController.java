@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController
 @RequestMapping("/trainings")
@@ -18,14 +19,14 @@ public class TrainingController {
     }
 
     @PostMapping
-    public ResponseEntity<TrainingDTO> createTraining(@Valid @RequestBody TrainingDTO trainingDTO) {
+    public ResponseEntity<TrainingDTO> createTraining( @RequestBody TrainingDTO trainingDTO) {
         TrainingDTO createdTraining = trainingService.createTraining(trainingDTO);
         return new ResponseEntity<>(createdTraining, HttpStatus.CREATED);
     }
 
 
     @PutMapping("/{trainingId}")
-    public ResponseEntity<TrainingDTO> updateTraining(@PathVariable Long trainingId, @Valid @RequestBody TrainingDTO trainingDTO) {
+    public ResponseEntity<TrainingDTO> updateTraining(@PathVariable Long trainingId, @RequestBody TrainingDTO trainingDTO) {
         TrainingDTO updatedTraining = trainingService.updateTraining(trainingId, trainingDTO);
         return new ResponseEntity<>(updatedTraining, HttpStatus.OK);
     }
@@ -41,5 +42,22 @@ public class TrainingController {
         TrainingDTO training = trainingService.getTrainingById(trainingId);
         return new ResponseEntity<>(training, HttpStatus.OK);
     }
+    @GetMapping("/user/{userId}/reservedTrainings")
+    public ResponseEntity<List<TrainingDTO>> getReservedTrainingsForUser(@PathVariable Long userId) {
+        List<TrainingDTO> cancelledTrainings = trainingService.getReservedTrainingsForUser(userId);
+        return new ResponseEntity<>(cancelledTrainings, HttpStatus.OK);
+    }
 
+    @GetMapping("/trainer/{trainerId}/reservedTrainings")
+    public ResponseEntity<List<TrainingDTO>> getReservedTrainingsForTrainer(@PathVariable Long trainerId) {
+        List<TrainingDTO> reservedTrainings = trainingService.getReservedTrainingsForTrainer(trainerId);
+        return new ResponseEntity<>(reservedTrainings, HttpStatus.OK);
+    }
+
+    @GetMapping("/trainer/{trainerId}/activeTrainings")
+    public ResponseEntity<List<TrainingDTO>> getActiveTrainingsForTrainer(@PathVariable Long trainerId) {
+        List<TrainingDTO> activeTrainings = trainingService.getActiveTrainingsForTrainer(trainerId);
+        return new ResponseEntity<>(activeTrainings, HttpStatus.OK);
+    }
 }
+

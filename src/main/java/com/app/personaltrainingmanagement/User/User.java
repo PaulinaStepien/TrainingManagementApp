@@ -20,7 +20,7 @@ import java.util.List;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false, unique = true)
+    @Column(name = "id", nullable = false, updatable = false, unique = true)
     private Long id;
 
     @NotBlank(message = "Email is required")
@@ -48,7 +48,7 @@ public class User {
 
     @NotBlank(message = "Phone number is required")
     @Pattern(regexp = "\\d{9}", message = "Invalid phone number")
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String phoneNumber;
 
     @OneToMany(mappedBy = "user")
@@ -56,4 +56,7 @@ public class User {
 
     @OneToMany(mappedBy = "user")
     private List<Subscription> subscriptions = new ArrayList<>();
+
+    public User(long id, String firstName, String lastName, String email, String birthdate, String phoneNumber, String password) {
+    }
 }

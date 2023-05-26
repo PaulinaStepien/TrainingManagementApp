@@ -3,7 +3,6 @@ package com.app.personaltrainingmanagement;
 import com.app.personaltrainingmanagement.Subscription.SubscriptionDTO;
 import com.app.personaltrainingmanagement.Subscription.SubscriptionService;
 import com.app.personaltrainingmanagement.Subscription.SubscriptionTypeEnum;
-import com.app.personaltrainingmanagement.Trainer.Trainer;
 import com.app.personaltrainingmanagement.Trainer.TrainerDTO;
 import com.app.personaltrainingmanagement.Trainer.TrainerService;
 import com.app.personaltrainingmanagement.Training.*;
@@ -67,15 +66,15 @@ public class DataInitializer implements CommandLineRunner {
     private void initializeSubscriptions() {
         SubscriptionDTO subscriptionDTO1 = new SubscriptionDTO();
         subscriptionDTO1.setSubscriptionType(SubscriptionTypeEnum.SIX);
-        subscriptionDTO1.setBeginDate(LocalDate.of(2023, 4, 30));
-        subscriptionDTO1.setEndDate(LocalDate.of(2023, 6, 30));
+        subscriptionDTO1.setBeginDate(LocalDate.of(2023, 6, 30));
+        subscriptionDTO1.setEndDate(LocalDate.of(2023, 7, 30));
         subscriptionDTO1.setStatus("Active");
         subscriptionDTO1.setUserId(1L);
 
         SubscriptionDTO subscriptionDTO2 = new SubscriptionDTO();
         subscriptionDTO2.setSubscriptionType(SubscriptionTypeEnum.FOUR);
-        subscriptionDTO2.setBeginDate(LocalDate.of(2023, 3, 30));
-        subscriptionDTO2.setEndDate(LocalDate.of(2023, 4, 30));
+        subscriptionDTO2.setBeginDate(LocalDate.of(2023, 8, 30));
+        subscriptionDTO2.setEndDate(LocalDate.of(2023, 9, 30));
         subscriptionDTO2.setStatus("Inactive");
         subscriptionDTO2.setUserId(1L);
 
@@ -88,9 +87,17 @@ public class DataInitializer implements CommandLineRunner {
         trainingDTO1.setStartDateTime(LocalDateTime.of(2023,5,26,17,0));
         trainingDTO1.setEndDateTime(LocalDateTime.of(2023,5,26,18,0));
         trainingDTO1.setStatus(TrainingStatusEnum.ACTIVE);
+        trainingDTO1.setUserId(1L);
         trainingDTO1.setTrainerId(1L);
 
+
+        TrainingDTO trainingDTO2 = new TrainingDTO();
+        trainingDTO2.setStartDateTime(LocalDateTime.of(2023,5,27,17,0));
+        trainingDTO2.setEndDateTime(LocalDateTime.of(2023,5,27,18,0));
+        trainingDTO2.setTrainerId(1L);
+
         trainingService.createTraining(trainingDTO1);
+        trainingService.createTraining(trainingDTO2);
 
     }
 

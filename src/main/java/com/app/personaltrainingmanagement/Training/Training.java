@@ -47,5 +47,11 @@ public class Training {
     @JoinColumn(name = "user_id")
     private User user;
 
+    public Training(Long id, LocalDateTime startDateTime, LocalDateTime endDateTime, TrainingStatusEnum status, Trainer trainer) {
+        this.startDateTime = startDateTime;
+        this.endDateTime = endDateTime;
+        this.status = status;
+        this.trainer = trainer;
+    }
 
 }

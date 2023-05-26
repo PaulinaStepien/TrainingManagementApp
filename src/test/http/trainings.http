@@ -1,6 +1,15 @@
 ### Get trainingById
 GET http://localhost:8080/trainings/byId/1
 
+### Get reservedTrainingByUserId
+GET http://localhost:8080/trainings/user/1/reservedTrainings
+
+### Get reservedTrainingByTrainerId
+GET http://localhost:8080/trainings/trainer/1/reservedTrainings
+
+### Get activeTrainingByTrainerId
+GET http://localhost:8080/trainings/trainer/1/activeTrainings
+
 ### Create training
 POST http://localhost:8080/trainings
 Content-Type: application/json
@@ -8,16 +17,17 @@ Content-Type: application/json
 {
   "startDateTime": "2023-05-27T19:00:00",
   "endDateTime": "2023-05-27T20:00:00",
-  "status": "ACTIVE",
   "trainerId": 1
 }
 
 ### Update training
-PUT http://localhost:8080/trainings/1
+PUT http://localhost:8080/trainings/2
 Content-Type: application/json
 
 {
-  "userId": 1
+  "endDateTime": "2023-05-27T20:00:00.00",
+  "trainerId": 1,
+  "startDateTime": "2023-05-27T19:00:00"
 }
 
 ### Delete training

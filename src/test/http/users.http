@@ -1,5 +1,5 @@
 ### Get userById
-GET http://localhost:8080/users/1
+GET http://localhost:8080/users/byId/1
 
 ### Get AllUsers
 GET http://localhost:8080/users/allUsers
@@ -15,23 +15,25 @@ POST http://localhost:8080/users
 Content-Type: application/json
 
 {
-  "email": "john@example.com",
-  "password": "password123",
+  "email": "j2@jonekjoinek2.pl",
+  "password": "pAssword!123",
   "firstName": "John",
   "lastName": "Doe",
   "birthdate": "1990-01-01",
-  "phoneNumber": "123456789"
+  "phoneNumber": "12311a189"
 }
 
 ### Update user
-PUT http://localhost:8080/users/2
+PUT http://localhost:8080/users/1
 Content-Type: application/json
 
 {
-"email": "updatedemail@example.com",
-"password": "updatedpassword456",
-"birthdate": "1992-05-10",
-"phoneNumber": "987654321"
+  "email": "updatedemail5@example.com",
+  "password": "upDatedpassword456!",
+  "firstName": "John",
+  "lastName": "Doe",
+  "birthdate": "1992-05-10",
+  "phoneNumber": "123113189"
 }
 
 ### Delete user

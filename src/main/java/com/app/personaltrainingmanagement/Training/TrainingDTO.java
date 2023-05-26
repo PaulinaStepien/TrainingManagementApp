@@ -1,6 +1,7 @@
 package com.app.personaltrainingmanagement.Training;
 
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 import javax.validation.constraints.Future;
@@ -9,6 +10,7 @@ import java.time.LocalDateTime;
 
 @Getter
 @Setter
+@RequiredArgsConstructor
 public class TrainingDTO {
     private Long id;
     private TrainingStatusEnum status;
@@ -24,6 +26,7 @@ public class TrainingDTO {
 
     @NotNull(message = "Trainer ID is required")
     private Long trainerId;
+
 
 
 }
