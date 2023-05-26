@@ -23,11 +23,12 @@ Content-Type: application/json
 
 {
   "firstName": "Ludwik",
-  "lastName": "Nowy"
+  "lastName": "Nowy",
+  "email": "nowak@mail.mail"
 }
 
 ### Delete trainer
-DELETE http://localhost:8080/trainers/2
+DELETE http://localhost:8080/trainers/1
 
 
 

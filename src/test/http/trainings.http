@@ -25,9 +25,7 @@ PUT http://localhost:8080/trainings/2
 Content-Type: application/json
 
 {
-  "endDateTime": "2023-05-27T20:00:00.00",
-  "trainerId": 1,
-  "startDateTime": "2023-05-27T19:00:00"
+ "userId": 1
 }
 
 ### Delete training

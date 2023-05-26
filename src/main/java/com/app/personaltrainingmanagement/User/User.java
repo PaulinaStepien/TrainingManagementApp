@@ -1,4 +1,4 @@
-package com.app.personaltrainingmanagement.User;// User.java
+package com.app.personaltrainingmanagement.User;
 import com.app.personaltrainingmanagement.Subscription.Subscription;
 import com.app.personaltrainingmanagement.Training.Training;
 import lombok.*;
@@ -20,7 +20,7 @@ import java.util.List;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false, updatable = false, unique = true)
+    @Column(name = "id", nullable = false, unique = true)
     private Long id;
 
     @NotBlank(message = "Email is required")
@@ -29,7 +29,7 @@ public class User {
     private String email;
 
     @NotBlank(message = "Password is required")
-    @Size(min = 6, message = "Password should have at least 6 characters", max = 20)
+    @Size(min = 6, max = 20, message = "Password should have at least 6 characters, maximum 20.")
     @Column(length = 20, nullable = false)
     private String password;
 
@@ -57,6 +57,6 @@ public class User {
     @OneToMany(mappedBy = "user")
     private List<Subscription> subscriptions = new ArrayList<>();
 
-    public User(long id, String firstName, String lastName, String email, String birthdate, String phoneNumber, String password) {
-    }
+//    public User(long id, String firstName, String lastName, String email, String birthdate, String phoneNumber, String password) {
+//    }
 }

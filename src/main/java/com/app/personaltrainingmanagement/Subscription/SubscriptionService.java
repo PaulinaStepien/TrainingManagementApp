@@ -38,7 +38,7 @@ public class SubscriptionService {
 
 
     @Transactional
-    public SubscriptionDTO getSubscriptionbyID(Long subscriptionId) {
+    public SubscriptionDTO getSubscriptionByID(Long subscriptionId) {
         try {
             Subscription subscription = subscriptionRepository.findById(subscriptionId)
                     .orElseThrow(EntityNotFoundException::new);

@@ -8,9 +8,6 @@ import java.util.List;
 
 public interface TrainingRepository extends JpaRepository<Training, Long> {
 
-//    List<Training> findAllByUser(User user);
-//    List<Training> findAllByTrainer(Trainer trainer);
-
 
     List<Training> findByUserAndStatus(User user, TrainingStatusEnum reserved);
 

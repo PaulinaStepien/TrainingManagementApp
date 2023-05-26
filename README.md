@@ -39,70 +39,34 @@ Po wykonaniu powyższych kroków, aplikacja powinna być dostępna pod adresem h
 
 Endpointy
 Poniżej znajduje się lista dostępnych endpointów:
+USER
+getAllUsers – pobiera wszystkich użytkowników z bazy
+createUser – tworzy użytkownika o unikatowym id w bazie danych – dane sprawdzane są zgodnie z walidacją klasy User
+updateUser – aktualizuje istniejącego użytkownika – dane sprawdzane są zgodnie z walidacją klasy User
+deleteUser – usuwa istniejącego użytkownika z bazy danych
+getUser – pobiera użytkownika po Id
+getUserByPhoneNumber - pobiera użytkownika po numerze telefonu
+getUserByEmail - pobiera użytkownika po mailu
 
-Tworzenie subskrypcji
 
-POST /subscriptions
+TRAINER
+getAllTrainers – pobiera wszystkich użytkowników z bazy
+createTrainer – tworzy trenera o unikatowym id w bazie danych – dane sprawdzane są zgodnie z walidacją klasy Trainer
+updateTrainer – aktualizuje istniejącego trenera – dane sprawdzane są zgodnie z walidacją klasy Trainer
+deleteTrainer – usuwa istniejącego trenera z bazy danych
+getTrainerById - pobiera trenera po Id
+getTrainerByEmail - - pobiera użytkownika po mailu
 
-Tworzy nową subskrypcję na podstawie przekazanych danych subskrypcji.
 
-Pobieranie subskrypcji
+TRAINING
+createTraining – tworzy trening
+updateTraining - aktualizuje istniejący trening
+deleteTraining – usuwa trening
+getTraining – pobiera trening po Id
+getReservedTrainingsForUser – pobiera treningi o statusie aktywny dla danego użytkownika
+getReservedTrainingsForTrainer - pobiera treningi o statusie zarezerwowany dla danego trenera
+getActiveTrainingsForTrainer - pobiera treningi o statusie aktywny dla danego trenera
 
-GET /subscriptions/{subscriptionId}
-
-Pobiera subskrypcję o podanym identyfikatorze.
-
-Tworzenie trenera
-
-POST /trainers
-
-Tworzy nowego trenera na podstawie przekazanych danych trenera.
-
-Aktualizacja trenera
-
-PUT /trainers/{trainerId}
-
-Aktualizuje dane trenera o podanym identyfikatorze.
-
-Usuwanie trenera
-
-DELETE /trainers/{trainerId}
-
-Usuwa trenera o podanym identyfikatorze.
-
-Pobieranie trenera
-
-GET /trainers/{trainerId}
-
-Pobiera trenera o podanym identyfikatorze.
-
-Pobieranie wszystkich trenerów
-
-GET /trainers/allTrainers
-
-Pobiera listę wszystkich trenerów.
-
-Tworzenie treningu
-
-POST /trainings
-
-Tworzy nowy trening na podstawie przekazanych danych treningu.
-
-Aktualizacja treningu
-
-PUT /trainings/{trainingId}
-
-Aktualizuje dane treningu o podanym identyfikatorze.
-
-Usuwanie treningu
-
-DELETE /trainings/{trainingId}
-
-Usuwa trening o podanym identyfikatorze.
-
-Pobieranie treningu
-
-GET /trainings/byId/{trainingId}
-
-Pobiera trening o podanym identyfikatorze.
-
+SUBSCRIPTION
+createSubscription – tworzy subskrypcję dla użytkownika
+getSubscriptionById – pobiera dane subskrypcji 

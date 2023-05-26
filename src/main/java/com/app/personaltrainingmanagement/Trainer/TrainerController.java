@@ -1,8 +1,5 @@
 package com.app.personaltrainingmanagement.Trainer;
 
-import com.app.personaltrainingmanagement.User.UserDTO;
-import com.app.personaltrainingmanagement.User.UserService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -43,8 +40,7 @@ public class TrainerController {
 
     @GetMapping("/allTrainers")
     public List<TrainerDTO> getAllTrainers() {
-        List<TrainerDTO> trainers = trainerService.getAllTrainers();
-        return trainers;
+        return trainerService.getAllTrainers();
     }
     @GetMapping("/{trainerId}")
     public ResponseEntity<TrainerDTO> getTrainerById(@PathVariable Long trainerId) {

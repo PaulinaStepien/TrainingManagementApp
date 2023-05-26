@@ -68,14 +68,14 @@ public class DataInitializer implements CommandLineRunner {
         subscriptionDTO1.setSubscriptionType(SubscriptionTypeEnum.SIX);
         subscriptionDTO1.setBeginDate(LocalDate.of(2023, 6, 30));
         subscriptionDTO1.setEndDate(LocalDate.of(2023, 7, 30));
-        subscriptionDTO1.setStatus("Active");
+        subscriptionDTO1.setStatus("ACTIVE");
         subscriptionDTO1.setUserId(1L);
 
         SubscriptionDTO subscriptionDTO2 = new SubscriptionDTO();
         subscriptionDTO2.setSubscriptionType(SubscriptionTypeEnum.FOUR);
         subscriptionDTO2.setBeginDate(LocalDate.of(2023, 8, 30));
         subscriptionDTO2.setEndDate(LocalDate.of(2023, 9, 30));
-        subscriptionDTO2.setStatus("Inactive");
+        subscriptionDTO2.setStatus("ACTIVE");
         subscriptionDTO2.setUserId(1L);
 
         subscriptionService.createSubscription(subscriptionDTO1);

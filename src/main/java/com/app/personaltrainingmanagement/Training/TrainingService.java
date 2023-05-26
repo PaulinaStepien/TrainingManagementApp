@@ -28,7 +28,7 @@ public class TrainingService {
         Optional<Trainer> optionalTrainer = trainerRepository.findById(trainingDTO.getTrainerId());
         if (optionalTrainer.isPresent()) {
             Trainer trainer = optionalTrainer.get();
-            Training training = trainingMapper.mapToEntity(trainingDTO);
+            Training training = TrainingMapper.mapToEntity(trainingDTO);
             training.setTrainer(trainer);
             if (trainingDTO.getUserId() == null) {
                 training.setStatus(TrainingStatusEnum.ACTIVE);
@@ -62,17 +62,14 @@ public class TrainingService {
             if (trainingDTO.getEndDateTime() != null) {
                 training.setEndDateTime(trainingDTO.getEndDateTime());
             }
-            if (trainingDTO.getUserId() != null && !trainingDTO.getUserId().equals(training.getUser().getId())) {
-                Optional<User> optionalUser = userRepository.findById(trainingDTO.getUserId());
-                if (optionalUser.isPresent()) {
-                    User user = optionalUser.get();
-                    training.setUser(user);
-                    training.setStatus(TrainingStatusEnum.RESERVED);
-                } else {
-                    throw new RuntimeException("User not found");
-                }
-            }
 
+            Long newUserId = trainingDTO.getUserId();
+            if (newUserId != null) {
+                User newUser = userRepository.findById(newUserId)
+                        .orElseThrow(() -> new RuntimeException("User not found"));
+                training.setUser(newUser);
+                training.setStatus(TrainingStatusEnum.RESERVED);
+            }
 
             Training updatedTraining = trainingRepository.save(training);
             return trainingMapper.mapToDto(updatedTraining);
@@ -80,6 +77,9 @@ public class TrainingService {
             throw new RuntimeException("Training not found");
         }
     }
+
+
+
 
 
     @Transactional

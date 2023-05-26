@@ -15,12 +15,12 @@ POST http://localhost:8080/users
 Content-Type: application/json
 
 {
-  "email": "j2@jonekjoinek2.pl",
+  "email": "j19@jonekjoinek2.pl",
   "password": "pAssword!123",
   "firstName": "John",
   "lastName": "Doe",
   "birthdate": "1990-01-01",
-  "phoneNumber": "12311a189"
+  "phoneNumber": "112115119"
 }
 
 ### Update user
@@ -37,7 +37,7 @@ Content-Type: application/json
 }
 
 ### Delete user
-DELETE http://localhost:8080/users/3
+DELETE http://localhost:8080/users/4
 
 
 
